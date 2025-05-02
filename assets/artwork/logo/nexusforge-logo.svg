@@ -1,4 +1,4 @@
-<svg width="750" height="200" viewBox="0 0 750 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="550" height="200" viewBox="0 0 550 200" xmlns="http://www.w3.org/2000/svg">
   <!-- Definitions for gradients and patterns -->
   <defs>
     <!-- Glow filter -->
@@ -27,7 +27,7 @@
   </defs>
   
   <!-- Left side: Forge symbol -->
-  <g id="forgeFrame" transform="translate(150, 100)">
+  <g id="forgeFrame" transform="translate(120, 100)">
     <!-- Outer hexagon -->
     <path d="M86.6,50 L86.6,-50 L0,-100 L-86.6,-50 L-86.6,50 L0,100 Z" 
           fill="none" 
@@ -91,7 +91,7 @@
   </g>
   
   <!-- Right side: Typography -->
-  <g id="logoType" transform="translate(400, 85)">
+  <g id="logoType" transform="translate(240, 85)">
     <!-- NexusForge text -->
     <text font-family="Arial, Helvetica, sans-serif" 
           font-weight="700" 
@@ -114,8 +114,5 @@
       Where Dimensions Unite, Games Take Flight
     </text>
   </g>
-  
-  <!-- Invisible divider to ensure separation -->
-  <line x1="300" y1="0" x2="300" y2="200" stroke="none"/>
 </svg>
 
