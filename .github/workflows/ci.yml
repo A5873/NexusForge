@@ -1,0 +1,71 @@
+name: NexusForge CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: "Ubuntu GCC"
+            os: ubuntu-latest
+            compiler: gcc
+            build_type: Release
+            
+          - name: "Ubuntu Clang"
+            os: ubuntu-latest
+            compiler: clang
+            build_type: Release
+            
+          - name: "macOS Clang"
+            os: macos-latest
+            compiler: clang
+            build_type: Release
+            
+          - name: "Windows MSVC"
+            os: windows-latest
+            compiler: msvc
+            build_type: Release
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Create Build Environment
+      run: cmake -E make_directory ${{github.workspace}}/build
+      
+    - name: Configure CMake (Unix)
+      if: matrix.os != 'windows-latest'
+      working-directory: ${{github.workspace}}/build
+      env:
+        CC: ${{ matrix.compiler == 'gcc' && 'gcc' || 'clang' }}
+        CXX: ${{ matrix.compiler == 'gcc' && 'g++' || 'clang++' }}
+      run: |
+        cmake .. \
+          -DCMAKE_BUILD_TYPE=${{matrix.build_type}} \
+          -DNF_BUILD_EXAMPLES=ON \
+          -DNF_BUILD_TESTS=ON
+      
+    - name: Configure CMake (Windows)
+      if: matrix.os == 'windows-latest'
+      working-directory: ${{github.workspace}}/build
+      run: |
+        cmake .. `
+          -DCMAKE_BUILD_TYPE=${{matrix.build_type}} `
+          -DNF_BUILD_EXAMPLES=ON `
+          -DNF_BUILD_TESTS=ON
+      
+    - name: Build
+      working-directory: ${{github.workspace}}/build
+      run: cmake --build . --config ${{matrix.build_type}}
+      
+    - name: Test
+      working-directory: ${{github.workspace}}/build
+      run: ctest -C ${{matrix.build_type}} --output-on-failure
+

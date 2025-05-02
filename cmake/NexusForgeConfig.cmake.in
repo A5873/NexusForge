@@ -1,0 +1,11 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+# Add any dependencies here
+# find_dependency(dependency_name)
+
+include("${CMAKE_CURRENT_LIST_DIR}/NexusForgeTargets.cmake")
+
+check_required_components(NexusForge)
+
