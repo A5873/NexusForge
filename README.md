@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/artwork/logo/nexusforge-logo.svg" alt="NexusForge Logo" width="650">
+  <img src="assets/artwork/logo/nexusforge-logo.svg" alt="NexusForge Logo" width="600">
 </p>
 
 <div align="center">
