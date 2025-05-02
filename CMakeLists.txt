@@ -5,7 +5,7 @@ project(
     NexusForge
     VERSION 0.1.0
     DESCRIPTION "A scalable game development framework that grows from 2D to 3D"
-    HOMEPAGE_URL "https://github.com/nexusforge/nexusforge"
+    HOMEPAGE_URL "https://github.com/A5873/NexusForge"
     LANGUAGES CXX
 )
 

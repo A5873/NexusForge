@@ -1,6 +1,15 @@
-# NexusForge
+<p align="center">
+  <img src="assets/artwork/logo/nexusforge-logo.svg" alt="NexusForge Logo" width="650">
+</p>
 
-**Building worlds from pixels to polygons - a scalable game development framework**
+<div align="center">
+  
+  ![Build](https://img.shields.io/badge/Build-Passing-brightgreen)
+  ![Status](https://img.shields.io/badge/Status-Early_Development-blue)
+  ![License](https://img.shields.io/badge/License-MIT-green)
+  ![C++](https://img.shields.io/badge/C++-17-orange)
+  
+</div>
 
 ## Vision
 
@@ -107,7 +116,7 @@ NexusForge follows a phased development approach, starting with a solid 2D found
 
 ### Building from Source
 ```bash
-git clone https://github.com/yourusername/NexusForge.git
+git clone https://github.com/A5873/NexusForge.git
 cd NexusForge
 mkdir build && cd build
 cmake ..
