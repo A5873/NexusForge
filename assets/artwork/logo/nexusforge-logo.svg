@@ -27,7 +27,7 @@
   </defs>
   
   <!-- Left side: Forge symbol -->
-  <g id="forgeFrame" transform="translate(140, 100)">
+  <g id="forgeFrame" transform="translate(100, 100)">
     <!-- Outer hexagon -->
     <path d="M86.6,50 L86.6,-50 L0,-100 L-86.6,-50 L-86.6,50 L0,100 Z" 
           fill="none" 
@@ -91,7 +91,7 @@
   </g>
   
   <!-- Right side: Typography -->
-  <g id="logoType" transform="translate(180, 85)">
+  <g id="logoType" transform="translate(280, 85)">
     <!-- NexusForge text -->
     <text font-family="Arial, Helvetica, sans-serif" 
           font-weight="700" 
